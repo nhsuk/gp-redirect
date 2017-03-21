@@ -1,13 +1,14 @@
 const express = require('express');
+const log = require('./lib/logger');
 
 const app = express();
 const port = 3002;
 
 app.get('/route-to-gp', (req, res) => {
-  console.log(req);
+  log.info(req);
   res.send(req.get('Referer'));
 });
 
 app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+  log.info(`App listening on port ${port}`);
 });

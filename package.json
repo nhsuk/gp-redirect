@@ -7,8 +7,8 @@
     "lint": "eslint --ext .js,.json .",
     "lint-watch": "esw --watch .",
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-watch": "nodemon app.js"
+    "start-watch": "nodemon app.js | ./node_modules/.bin/bunyan",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "eslint-plugin-mocha": "^4.9.0",
     "eslint-plugin-react": "^6.10.3",
     "eslint-watch": "^3.0.1",
+    "nhsuk-bunyan-logger": "github:nhsuk/bunyan-logger",
     "nodemon": "^1.11.0"
   }
 }
