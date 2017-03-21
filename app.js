@@ -8,6 +8,6 @@ app.get('/route-to-gp', (req, res) => {
   res.send(req.get('Referer'));
 });
 
-app.listen(port, () =>{
+app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
