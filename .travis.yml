@@ -21,4 +21,4 @@ script:
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - ./scripts/ci-deployment/docker_ci.sh
-  # - ./scripts/ci-deployment/rancher_pr_deploy.sh
+  - ./scripts/ci-deployment/rancher_pr_deploy.sh
