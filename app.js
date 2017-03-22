@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   res.status(200).end();
 });
 
-app.get('/route-to-gp', (req, res) => {
+app.get('/redirect', (req, res) => {
   log.info(req);
   // res.send(`Refering page: ${req.get('Referer')}`);
   res.json(req.headers);
