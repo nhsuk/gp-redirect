@@ -5,8 +5,8 @@ const app = express();
 const port = process.env.PORT;
 
 app.get('/route-to-gp', (req, res) => {
-  log.info(req);
-  res.send(req.get('Referer'));
+  log.debug(req);
+  res.send(`Refering page: ${req.get('Referer')}`);
 });
 
 app.listen(port, () => {
