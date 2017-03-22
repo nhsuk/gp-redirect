@@ -8,10 +8,16 @@
     "lint-watch": "esw --watch .",
     "start": "node app.js",
     "start-watch": "nodemon app.js | ./node_modules/.bin/bunyan",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-watch": "npm run test -- --watch --reporter min",
+    "travis": "npm run lint && npm run test"
   },
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsuk/gp-redirect.git"
+  },
   "dependencies": {
     "express": "^4.15.2"
   },

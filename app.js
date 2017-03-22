@@ -2,7 +2,7 @@ const express = require('express');
 const log = require('./lib/logger');
 
 const app = express();
-const port = 3002;
+const port = process.env.PORT;
 
 app.get('/route-to-gp', (req, res) => {
   log.info(req);
