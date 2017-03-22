@@ -15,7 +15,8 @@ app.get('/', (req, res) => {
 
 app.get('/route-to-gp', (req, res) => {
   log.info(req);
-  res.send(`Refering page: ${req.get('Referer')}`);
+  // res.send(`Refering page: ${req.get('Referer')}`);
+  res.json(req.headers);
 });
 
 app.listen(port, () => {
