@@ -4,6 +4,10 @@ const log = require('./lib/logger');
 const app = express();
 const port = process.env.PORT;
 
+app.get('/', (req, res) => {
+  res.status(200).end();
+});
+
 app.get('/route-to-gp', (req, res) => {
   log.debug(req);
   res.send(`Refering page: ${req.get('Referer')}`);
