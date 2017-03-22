@@ -19,6 +19,7 @@
     "url": "git+https://github.com/nhsuk/gp-redirect.git"
   },
   "dependencies": {
+    "nhsuk-bunyan-logger": "github:nhsuk/bunyan-logger#1.1.1",
     "express": "^4.15.2"
   },
   "devDependencies": {
@@ -30,7 +31,6 @@
     "eslint-plugin-mocha": "^4.9.0",
     "eslint-plugin-react": "^6.10.3",
     "eslint-watch": "^3.0.1",
-    "nhsuk-bunyan-logger": "github:nhsuk/bunyan-logger",
     "nodemon": "^1.11.0"
   }
 }
