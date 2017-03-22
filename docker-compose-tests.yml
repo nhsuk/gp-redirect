@@ -16,7 +16,7 @@ services:
     extends:
       file: docker-compose.yml
       service: base-app
-    command: sh -c "npm run travis"
+    command: npm run lint
     user: root
     volumes:
       - redirect-travis-tests-node_modules:/code/node_modules
