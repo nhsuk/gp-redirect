@@ -1,8 +1,10 @@
-const app = require('../../app');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
+const app = require('../../app');
+const constants = require('../../config/constants');
 
 const expect = chai.expect;
+const SITE_ROOT = constants.SITE_ROOT;
 
 chai.use(chaiHttp);
 
@@ -13,7 +15,7 @@ describe('app', () => {
 
   it('should redirect to the new gp profile page when referer comes from gp on choices', (done) => {
     chai.request(app)
-    .get('/redirect')
+    .get(SITE_ROOT)
     .set('referer', choicesGpPage)
     .end((err, res) => {
       // eslint-disable-next-line no-unused-expressions
@@ -25,7 +27,7 @@ describe('app', () => {
 
   it('should display the options page when no referer is available', (done) => {
     chai.request(app)
-    .get('/redirect')
+    .get(SITE_ROOT)
     .end((err, res) => {
       // eslint-disable-next-line no-unused-expressions
       expect(res).to.be.html;
@@ -36,7 +38,7 @@ describe('app', () => {
 
   it('should display debug json when debug param supplied', (done) => {
     chai.request(app)
-    .get('/redirect')
+    .get(SITE_ROOT)
     .set('referer', choicesGpPage)
     .query({ debug: '' })
     .end((err, res) => {

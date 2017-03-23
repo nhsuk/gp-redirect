@@ -1,7 +1,8 @@
+const path = require('path');
 const express = require('express');
 const log = require('./lib/logger');
 const rewriteUrl = require('./lib/rewriteUrl');
-const path = require('path');
+const constants = require('./config/constants');
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
   res.status(200).end();
 });
 
-app.get('/redirect', (req, res) => {
+app.get(constants.SITE_ROOT, (req, res) => {
   const debug = req.query.debug;
   const referer = req.get('referer');
   const rewrittenUrl = rewriteUrl(referer);
