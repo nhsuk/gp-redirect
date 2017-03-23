@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.status(200).end();
+  res.redirect(301, constants.SITE_ROOT);
 });
 
 app.get(constants.SITE_ROOT, (req, res) => {
@@ -28,7 +28,7 @@ app.get(constants.SITE_ROOT, (req, res) => {
   }
   if (rewrittenUrl) {
     log.info(`Redirecting request from ${referer} to ${rewrittenUrl}`);
-    res.redirect(302, rewrittenUrl);
+    res.redirect(rewrittenUrl);
   } else {
     log.info('Unable to redirect');
     res.sendFile(path.join(__dirname, '/views/options.html'));

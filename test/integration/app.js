@@ -13,6 +13,18 @@ describe('app', () => {
   const choicesGpPage = `http://www.nhs.uk/Services/GP/Overview/DefaultView.aspx?id=${choicesId}`;
   const redirectedToUrl = `https://beta.nhs.uk/gp-surgeries/${choicesId}`;
 
+  it('should redirect root requests to the SITE_ROOT', (done) => {
+    chai.request(app)
+    .get('/')
+    .end((err, res) => {
+      // eslint-disable-next-line no-unused-expressions
+      expect(res).to.redirect;
+      expect(res.redirects[0]).to.have.string(SITE_ROOT);
+      expect(res).to.have.status(200);
+      done();
+    });
+  });
+
   it('should redirect to the new gp profile page when referer comes from gp on choices', (done) => {
     chai.request(app)
     .get(SITE_ROOT)
