@@ -25,7 +25,8 @@ describe('rewriteUrl', () => {
   });
 
   it('should return undefined when the url does not contain an id', () => {
-    const result = rewriteUrl('http://no.thing.here');
+    const noIdGpReferer = 'http://www.nhs.uk/Services/gp/Overview/DefaultView.aspx?';
+    const result = rewriteUrl(noIdGpReferer);
 
     // eslint-disable-next-line no-unused-expressions
     expect(result).to.be.undefined;
