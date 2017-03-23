@@ -4,13 +4,18 @@
   "description": "Redirects requests for GP surgeries based on the referring page",
   "main": "app-start.js",
   "scripts": {
+    "check-coverage": "istanbul check-coverage --config .istanbul.yml",
+    "generate-coverage": "npm run istanbul -- cover _mocha -- --recursive",
+    "git-hook": "npm run lint && npm run generate-coverage && npm run check-coverage",
+    "istanbul": "NODE_ENV=test istanbul",
     "lint": "eslint --ext .js,.json .",
     "lint-watch": "esw --watch .",
+    "precommit": "npm run git-hook",
     "start": "node app-start.js",
     "start-watch": "nodemon app-start.js | ./node_modules/.bin/bunyan",
     "test": "NODE_ENV=test mocha --recursive test",
     "test-watch": "npm run test -- --watch --reporter min",
-    "travis": "npm run lint && npm run test"
+    "travis": "npm run git-hook"
   },
   "author": "",
   "license": "MIT",
@@ -33,6 +38,8 @@
     "eslint-plugin-mocha": "^4.9.0",
     "eslint-plugin-react": "^6.10.3",
     "eslint-watch": "^3.0.1",
+    "husky": "^0.13.2",
+    "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0"
   }
