@@ -26,7 +26,8 @@ is run. This is best practice as described by
 The defaults given below are for when the application is run for development
 via docker-compose, as described above.
 
-| Variable | Description | Default | |:---|:---|:---| | `NODE_ENV` | node
-environment | development | | `LOG_LEVEL` | [bunyan log
-level](https://github.com/trentm/node-bunyan#levels) | `INFO` | | `PORT` |
-server port | 3000 |
+| Variable | Description | Default |
+|:---|:---|:---|
+| `NODE_ENV` | node environment | development |
+| `LOG_LEVEL` | [bunyan log level](https://github.com/trentm/node-bunyan#levels) | `INFO` |
+| `PORT` | server port | 3000 |
