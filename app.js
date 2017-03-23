@@ -1,6 +1,6 @@
 const express = require('express');
 const log = require('./lib/logger');
-// const rewriteUrl = require('./lib/rewriteUrl');
+const rewriteUrl = require('./lib/rewriteUrl');
 
 const app = express();
 const port = process.env.PORT;
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 app.get('/redirect', (req, res) => {
   const debug = req.query.debug;
   const referer = req.get('referer');
-  const profileUrl = 'http://beta.nhs.uk/'; // rewriteUrl(referer);
+  const profileUrl = rewriteUrl(referer);
 
   if (debug === '' || debug) {
     res.json({
