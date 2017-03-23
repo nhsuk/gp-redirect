@@ -2,18 +2,38 @@
   "name": "gp-redirect",
   "version": "0.1.0",
   "description": "Redirects requests for GP surgeries based on the referring page",
-  "main": "app.js",
+  "main": "app-start.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-watch": "nodemon app.js"
+    "lint": "eslint --ext .js,.json .",
+    "lint-watch": "esw --watch .",
+    "start": "node app-start.js",
+    "start-watch": "nodemon app-start.js | ./node_modules/.bin/bunyan",
+    "test": "NODE_ENV=test mocha --recursive test",
+    "test-watch": "npm run test -- --watch --reporter min",
+    "travis": "npm run lint && npm run test"
   },
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsuk/gp-redirect.git"
+  },
   "dependencies": {
+    "nhsuk-bunyan-logger": "github:nhsuk/bunyan-logger#1.1.1",
     "express": "^4.15.2"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-mocha": "^4.9.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-watch": "^3.0.1",
+    "mocha": "^3.2.0",
     "nodemon": "^1.11.0"
   }
 }
