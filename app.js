@@ -1,7 +1,8 @@
+const path = require('path');
 const express = require('express');
 const log = require('./lib/logger');
 const rewriteUrl = require('./lib/rewriteUrl');
-const path = require('path');
+const constants = require('./config/constants');
 
 const app = express();
 
@@ -11,10 +12,10 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.status(200).end();
+  res.redirect(301, constants.SITE_ROOT);
 });
 
-app.get('/redirect', (req, res) => {
+app.get(constants.SITE_ROOT, (req, res) => {
   const debug = req.query.debug;
   const referer = req.get('referer');
   const rewrittenUrl = rewriteUrl(referer);
@@ -27,7 +28,7 @@ app.get('/redirect', (req, res) => {
   }
   if (rewrittenUrl) {
     log.info(`Redirecting request from ${referer} to ${rewrittenUrl}`);
-    res.redirect(302, rewrittenUrl);
+    res.redirect(rewrittenUrl);
   } else {
     log.info('Unable to redirect');
     res.sendFile(path.join(__dirname, '/views/options.html'));
