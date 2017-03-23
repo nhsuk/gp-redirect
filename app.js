@@ -1,9 +1,9 @@
 const express = require('express');
 const log = require('./lib/logger');
 const rewriteUrl = require('./lib/rewriteUrl');
+const path = require('path');
 
 const app = express();
-const port = process.env.PORT;
 
 app.use((req, res, next) => {
   log.debug(req);
@@ -17,19 +17,21 @@ app.get('/', (req, res) => {
 app.get('/redirect', (req, res) => {
   const debug = req.query.debug;
   const referer = req.get('referer');
-  const profileUrl = rewriteUrl(referer);
+  const rewrittenUrl = rewriteUrl(referer);
 
   if (debug === '' || debug) {
     res.json({
       headers: req.headers,
-      redirectTo: profileUrl,
+      redirectTo: rewrittenUrl,
     });
+  }
+  if (rewrittenUrl) {
+    log.info(`Redirecting request from ${referer} to ${rewrittenUrl}`);
+    res.redirect(302, rewrittenUrl);
   } else {
-    log.info(`Redirecting request from ${referer} to ${profileUrl}`);
-    res.redirect(302, profileUrl);
+    log.info('Unable to redirect');
+    res.sendFile(path.join(__dirname, '/views/options.html'));
   }
 });
 
-app.listen(port, () => {
-  log.info(`App listening on port ${port}`);
-});
+module.exports = app;

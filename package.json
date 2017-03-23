@@ -2,12 +2,12 @@
   "name": "gp-redirect",
   "version": "0.1.0",
   "description": "Redirects requests for GP surgeries based on the referring page",
-  "main": "app.js",
+  "main": "app-start.js",
   "scripts": {
     "lint": "eslint --ext .js,.json .",
     "lint-watch": "esw --watch .",
-    "start": "node app.js",
-    "start-watch": "nodemon app.js | ./node_modules/.bin/bunyan",
+    "start": "node app-start.js",
+    "start-watch": "nodemon app-start.js | ./node_modules/.bin/bunyan",
     "test": "NODE_ENV=test mocha --recursive test",
     "test-watch": "npm run test -- --watch --reporter min",
     "travis": "npm run lint && npm run test"
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
