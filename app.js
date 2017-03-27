@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   res.redirect(301, constants.SITE_ROOT);
 });
 
-app.get(constants.SITE_ROOT, (req, res) => {
+app.get(constants.SITE_ROOT, (req, res, next) => {
   const debug = req.query.debug;
   const referer = req.get('referer');
   const rewrittenUrl = rewriteUrl(referer);
@@ -25,14 +25,17 @@ app.get(constants.SITE_ROOT, (req, res) => {
       headers: req.headers,
       redirectTo: rewrittenUrl,
     });
+    next();
   }
+
   if (rewrittenUrl) {
     log.info(`Redirecting request from ${referer} to ${rewrittenUrl}`);
     res.redirect(rewrittenUrl);
-  } else {
-    log.info('Unable to redirect');
-    res.sendFile(path.join(__dirname, '/views/options.html'));
+    next();
   }
+
+  log.info('Unable to redirect');
+  res.sendFile(path.join(__dirname, '/views/options.html'));
 });
 
 module.exports = app;
