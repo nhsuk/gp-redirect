@@ -11,6 +11,8 @@
     "lint": "eslint --ext .js,.json .",
     "lint-watch": "esw --watch .",
     "precommit": "npm run git-hook",
+    "prepush": "npm run snyk -- test",
+    "snyk": "snyk",
     "start": "node app-start.js",
     "start-watch": "nodemon app-start.js | ./node_modules/.bin/bunyan",
     "test": "NODE_ENV=test mocha --recursive test",
@@ -41,6 +43,7 @@
     "husky": "^0.13.2",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "snyk": "^1.25.2"
   }
 }
