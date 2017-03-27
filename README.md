@@ -1,5 +1,8 @@
 # GP redirect
 
+[![Build Status](https://travis-ci.org/nhsuk/gp-redirect.svg?branch=master)](https://travis-ci.org/nhsuk/gp-redirect)
+[![Known Vulnerabilities](https://snyk.io/test/github/nhsuk/gp-redirect/badge.svg)](https://snyk.io/test/github/nhsuk/gp-redirect)
+
 A very simple app to recieve requests on a single URL and forward those onto
 the appropriate page in the [profiles app](https://github.com/nhsuk/profiles).
 
