@@ -15,27 +15,24 @@ app.get('/', (req, res) => {
   res.redirect(301, constants.SITE_ROOT);
 });
 
-app.get(constants.SITE_ROOT, (req, res, next) => {
+app.get(constants.SITE_ROOT, (req, res) => {
   const debug = req.query.debug;
   const referer = req.get('referer');
   const rewrittenUrl = rewriteUrl(referer);
 
   if (debug === '' || debug) {
-    res.json({
+    log.info(`Not redirecting request from ${referer} to ${rewrittenUrl} due to debug flag`);
+    return res.json({
       headers: req.headers,
       redirectTo: rewrittenUrl,
     });
-    next();
   }
-
   if (rewrittenUrl) {
     log.info(`Redirecting request from ${referer} to ${rewrittenUrl}`);
-    res.redirect(rewrittenUrl);
-    next();
+    return res.redirect(rewrittenUrl);
   }
-
-  log.info('Unable to redirect');
-  res.sendFile(path.join(__dirname, '/views/options.html'));
+  log.error({ req }, 'Unable to redirect');
+  return res.sendFile(path.join(__dirname, '/views/options.html'));
 });
 
 module.exports = app;
