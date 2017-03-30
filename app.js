@@ -7,7 +7,7 @@ const constants = require('./config/constants');
 const app = express();
 
 app.use((req, res, next) => {
-  log.debug(req);
+  log.debug({ req });
   next();
 });
 
