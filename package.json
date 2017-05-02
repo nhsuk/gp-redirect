@@ -5,19 +5,18 @@
   "main": "app-start.js",
   "scripts": {
     "check-coverage": "istanbul check-coverage --config .istanbul.yml",
-    "generate-coverage": "npm run istanbul -- cover _mocha -- --recursive",
-    "git-hook": "npm run lint && npm run generate-coverage && npm run check-coverage",
+    "generate-coverage": "yarn run istanbul -- cover _mocha -- --recursive",
+    "git-hook": "yarn run lint && yarn run generate-coverage && yarn run check-coverage",
     "istanbul": "NODE_ENV=test istanbul",
     "lint": "eslint --ext .js,.json .",
     "lint-watch": "esw --watch .",
-    "precommit": "npm run git-hook",
-    "prepush": "npm run snyk -- test",
-    "snyk": "snyk",
+    "precommit": "yarn run git-hook",
+    "prepush": "yarn run snyk -- test",
     "start": "node app-start.js",
     "start-watch": "nodemon app-start.js | ./node_modules/.bin/bunyan",
     "test": "NODE_ENV=test mocha --recursive test",
-    "test-watch": "npm run test -- --watch --reporter min",
-    "travis": "npm run git-hook"
+    "test-watch": "yarn run test -- --watch --reporter min",
+    "travis": "yarn run git-hook"
   },
   "author": "",
   "license": "MIT",
@@ -26,7 +25,7 @@
     "url": "git+https://github.com/nhsuk/gp-redirect.git"
   },
   "dependencies": {
-    "nhsuk-bunyan-logger": "github:nhsuk/bunyan-logger#1.1.1",
+    "nhsuk-bunyan-logger": "^1.2.3",
     "express": "^4.15.2"
   },
   "devDependencies": {

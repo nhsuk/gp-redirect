@@ -6,7 +6,7 @@ services:
     extends:
       file: docker-compose.yml
       service: base-app
-    command: npm run test-watch
+    command: yarn run test-watch
     volumes:
       - redirect-tests-node_modules:/code/node_modules
     environment:
@@ -16,7 +16,7 @@ services:
     extends:
       file: docker-compose.yml
       service: base-app
-    command: npm run travis
+    command: yarn run travis
     user: root
     volumes:
       - redirect-travis-tests-node_modules:/code/node_modules
