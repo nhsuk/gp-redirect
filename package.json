@@ -14,9 +14,10 @@
     "prepush": "yarn run snyk -- test",
     "start": "node app-start.js",
     "start-watch": "nodemon app-start.js | ./node_modules/bunyan/bin/bunyan",
+    "upload-coverage": "cat ./coverage/lcov.info | coveralls",
     "test": "NODE_ENV=test mocha --recursive test",
     "test-watch": "yarn run test -- --watch --reporter min",
-    "travis": "yarn run git-hook && yarn run snyk -- test --org=nhsuk && yarn run snyk -- monitor --org=nhsuk"
+    "travis": "yarn run git-hook && yarn run upload-coverage && yarn run snyk -- test --org=nhsuk && yarn run snyk -- monitor --org=nhsuk"
   },
   "author": "",
   "license": "MIT",
@@ -25,12 +26,13 @@
     "url": "git+https://github.com/nhsuk/gp-redirect.git"
   },
   "dependencies": {
-    "nhsuk-bunyan-logger": "^1.2.3",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "nhsuk-bunyan-logger": "^1.2.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "coveralls": "^2.13.1",
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
