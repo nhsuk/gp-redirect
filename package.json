@@ -13,7 +13,7 @@
     "precommit": "yarn run git-hook",
     "prepush": "yarn run snyk -- test",
     "start": "node app-start.js",
-    "start-watch": "nodemon app-start.js | ./node_modules/.bin/bunyan",
+    "start-watch": "nodemon app-start.js | ./node_modules/bunyan/bin/bunyan",
     "test": "NODE_ENV=test mocha --recursive test",
     "test-watch": "yarn run test -- --watch --reporter min",
     "travis": "yarn run git-hook && yarn run snyk -- test --org=nhsuk && yarn run snyk -- monitor --org=nhsuk"
