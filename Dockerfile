@@ -24,4 +24,4 @@ USER root
 RUN find /code -user 0 -print0 | xargs -0 chown $USERNAME:$USERNAME
 USER $USERNAME
 
-CMD [ "yarn", "start" ]
+CMD [ "node", "app-start.js" ]
