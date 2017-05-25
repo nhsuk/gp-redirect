@@ -14,7 +14,7 @@ ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
 COPY yarn.lock package.json /code/
-RUN if [ "$NODE_ENV" == "production" ]; then yarn install --production --ignore-optional; else yarn install --ignore-optional; fi
+RUN if [ "$NODE_ENV" == "production" ]; then yarn install --production --pure-lockfile --ignore-optional; else yarn install --pure-lockfile --ignore-optional; fi
 
 EXPOSE 3000
 
@@ -24,4 +24,4 @@ USER root
 RUN find /code -user 0 -print0 | xargs -0 chown $USERNAME:$USERNAME
 USER $USERNAME
 
-CMD [ "yarn", "start" ]
+CMD [ "node", "app-start.js" ]

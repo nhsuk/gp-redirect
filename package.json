@@ -26,7 +26,7 @@
     "url": "git+https://github.com/nhsuk/gp-redirect.git"
   },
   "dependencies": {
-    "express": "^4.15.2",
+    "express": "^4.15.3",
     "nhsuk-bunyan-logger": "^1.2.3"
   },
   "devDependencies": {
