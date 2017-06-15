@@ -4,11 +4,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/nhsuk/gp-redirect/badge.svg?branch=master)](https://coveralls.io/github/nhsuk/gp-redirect?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/nhsuk/gp-redirect/badge.svg)](https://snyk.io/test/github/nhsuk/gp-redirect)
 
-A very simple app to recieve requests on a single URL and forward those onto
+A very simple app to receive requests on a single URL and forward those onto
 the appropriate page in the [profiles app](https://github.com/nhsuk/profiles).
 
 It is intended to work with requests from the NHS Choices site on the GP pages,
-using the id of the GP surgery from the referrering page.
+using the id of the GP surgery from the referring page.
 
 ## Application development
 
@@ -21,7 +21,7 @@ should be taken down via `docker-compose down -v`. It is important to remove
 the volumes via `-v` so as to avoid issues with the contents being cached on
 the docker VM.
 
-## Environment variables
+## Environment variables
 
 Environment variables are managed by the environment in which the application
 is run. This is best practice as described by
@@ -32,6 +32,6 @@ via docker-compose, as described above.
 
 | Variable | Description | Default |
 |:---|:---|:---|
-| `NODE_ENV` | node environment | development |
-| `LOG_LEVEL` | [bunyan log level](https://github.com/trentm/node-bunyan#levels) | `INFO` |
-| `PORT` | server port | 3000 |
+| `NODE_ENV` | Node environment | development |
+| `LOG_LEVEL` | Numeric [log level](https://github.com/trentm/node-bunyan#levels) | `INFO` |
+| `PORT` | Server port | 3000 |
