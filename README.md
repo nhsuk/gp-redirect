@@ -30,8 +30,15 @@ is run. This is best practice as described by
 The defaults given below are for when the application is run for development
 via docker-compose, as described above.
 
-| Variable | Description | Default |
-|:---|:---|:---|
-| `NODE_ENV` | Node environment | development |
-| `LOG_LEVEL` | Numeric [log level](https://github.com/trentm/node-bunyan#levels) | `INFO` |
-| `PORT` | Server port | 3000 |
+| Variable    | Description                                                       | Default     |
+| :---        | :---                                                              | :---        |
+| `NODE_ENV`  | Node environment                                                  | development |
+| `LOG_LEVEL` | Numeric [log level](https://github.com/trentm/node-bunyan#levels) | `INFO`      |
+| `PORT`      | Server port                                                       | 2999        |
+
+## Architecture Decision Records
+
+This repo uses
+[Architecture Decision Records](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions)
+to record architectural decisions for this project.
+They are stored in [doc/adr](doc/adr).
