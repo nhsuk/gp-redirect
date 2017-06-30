@@ -23,3 +23,4 @@ services:
         splunk-source: gp-redirect
         splunk-verify-connection: "false"
         tag: '{{.ImageName}} {{.Name}} {{.FullID}}'
+        splunk-format: json
