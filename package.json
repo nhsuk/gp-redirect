@@ -27,16 +27,16 @@
   },
   "dependencies": {
     "express": "^4.15.3",
-    "nhsuk-bunyan-logger": "^1.4.0"
+    "nhsuk-bunyan-logger": "^1.4.1"
   },
   "devDependencies": {
     "chai": "^4.0.2",
     "chai-http": "^3.0.0",
     "coveralls": "^2.13.1",
-    "eslint": "^4.1.1",
+    "eslint": "^4.2.0",
     "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-config-nhsuk": "^0.3.0",
-    "eslint-plugin-import": "^2.6.1",
+    "eslint-config-nhsuk": "^0.3.1",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-mocha": "^4.11.0",
     "eslint-watch": "^3.1.2",
