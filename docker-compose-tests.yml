@@ -2,24 +2,24 @@ version: '2.1'
 
 services:
 
-  tests:
+  test:
     extends:
       file: docker-compose.yml
       service: base-app
     command: yarn run test-watch
     volumes:
-      - redirect-tests-node_modules:/code/node_modules
+      - redirect-test-node_modules:/code/node_modules
     environment:
       NODE_ENV: test
 
-  travis-tests:
+  test-ci:
     extends:
       file: docker-compose.yml
       service: base-app
-    command: yarn run travis
+    command: yarn run test-ci
     user: root
     volumes:
-      - redirect-travis-tests-node_modules:/code/node_modules
+      - redirect-test-ci-node_modules:/code/node_modules
     environment:
       COVERALLS_REPO_TOKEN: ${COVERALLS_REPO_TOKEN}
       NODE_ENV: development
@@ -29,5 +29,5 @@ services:
       TRAVIS_JOB_ID: ${TRAVIS_JOB_ID}
 
 volumes:
-  redirect-tests-node_modules:
-  redirect-travis-tests-node_modules:
+  redirect-test-node_modules:
+  redirect-test-ci-node_modules:

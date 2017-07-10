@@ -16,8 +16,8 @@
     "start-watch": "nodemon app-start.js | ./node_modules/bunyan/bin/bunyan",
     "upload-coverage": "cat ./coverage/lcov.info | coveralls",
     "test": "NODE_ENV=test mocha --recursive test",
-    "test-watch": "yarn test -- --watch --reporter min",
-    "travis": "yarn git-hook && yarn upload-coverage"
+    "test-ci": "yarn git-hook && yarn upload-coverage",
+    "test-watch": "yarn test -- --watch --reporter min"
   },
   "author": "",
   "license": "MIT",
