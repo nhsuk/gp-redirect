@@ -7,8 +7,8 @@ services:
     environment:
       NODE_ENV: production
     labels:
-      traefik.enable: stack
-      traefik.domain: ${TRAEFIK_DOMAIN}
+      traefik.enable: true
+      traefik.frontend.rule: $TRAEFIK_RULE
       traefik.port: 3000
       map-public-http: 3000
       io.rancher.container.pull_image: always
