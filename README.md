@@ -1,5 +1,6 @@
 # GP redirect
 
+[![GitHub Release](https://img.shields.io/github/release/nhsuk/gp-redirect.svg)](https://github.com/nhsuk/gp-redirect/releases/latest/)
 [![Greenkeeper badge](https://badges.greenkeeper.io/nhsuk/gp-redirect.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/nhsuk/gp-redirect.svg?branch=master)](https://travis-ci.org/nhsuk/gp-redirect)
 [![Coverage Status](https://coveralls.io/repos/github/nhsuk/gp-redirect/badge.svg?branch=master)](https://coveralls.io/github/nhsuk/gp-redirect?branch=master)
