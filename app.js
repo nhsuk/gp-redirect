@@ -3,8 +3,15 @@ const express = require('express');
 const log = require('./lib/logger');
 const rewriteUrl = require('./lib/rewriteUrl');
 const constants = require('./config/constants');
+const promBundle = require('./lib/promBundle');
 
 const app = express();
+
+// start collecting default metrics
+promBundle.promClient.collectDefaultMetrics();
+// metrics needs to be registered before routes wishing to have metrics generated
+// see https://github.com/jochen-schweizer/express-prom-bundle#sample-uusage
+app.use(promBundle);
 
 app.use((req, res, next) => {
   log.debug({ req });
