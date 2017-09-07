@@ -4,6 +4,7 @@ const log = require('./lib/logger');
 const rewriteUrl = require('./lib/rewriteUrl');
 const constants = require('./config/constants');
 const promBundle = require('./lib/promBundle');
+const errorCounter = require('./lib/promCounters').errorPageViews;
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.get(constants.SITE_ROOT, (req, res) => {
     log.info({ referer, rewrittenUrl }, `Redirecting request from ${referer} to ${rewrittenUrl}`);
     return res.redirect(rewrittenUrl);
   }
+  errorCounter.inc(1);
   log.error({ req }, 'Unable to redirect');
   return res.sendFile(path.join(__dirname, '/views/options.html'));
 });

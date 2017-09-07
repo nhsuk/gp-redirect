@@ -30,6 +30,14 @@ describe('metrics end point', () => {
     expect(responseText).to.have.string('# HELP http_request_duration_seconds duration histogram of http responses labeled with: status_code, path\n# TYPE http_request_duration_seconds histogram');
   });
 
+  it('should return an app_starts counter', () => {
+    expect(responseText).to.have.string('# HELP app_starts The number of times the application has been started\n# TYPE app_starts counter');
+  });
+
+  it('should return a gp_profile_page_views counter', () => {
+    expect(responseText).to.have.string('# HELP gp_profile_page_views The number of GP profile page views\n# TYPE gp_profile_page_views counter');
+  });
+
   it('should return an the default metrics', () => {
     expect(responseText).to.have.string('# HELP process_cpu_user_seconds_total Total user CPU time spent in seconds.\n# TYPE process_cpu_user_seconds_total counter');
     expect(responseText).to.have.string('# HELP process_cpu_system_seconds_total Total system CPU time spent in seconds.\n# TYPE process_cpu_system_seconds_total counter');
