@@ -12,7 +12,7 @@ const app = express();
 promBundle.promClient.collectDefaultMetrics();
 // metrics needs to be registered before routes wishing to have metrics generated
 // see https://github.com/jochen-schweizer/express-prom-bundle#sample-uusage
-app.use(promBundle);
+app.use(promBundle.middleware);
 
 app.use((req, res, next) => {
   log.debug({ req });

@@ -34,8 +34,8 @@ describe('metrics end point', () => {
     expect(responseText).to.have.string('# HELP app_starts The number of times the application has been started\n# TYPE app_starts counter');
   });
 
-  it('should return a gp_profile_page_views counter', () => {
-    expect(responseText).to.have.string('# HELP gp_profile_page_views The number of GP profile page views\n# TYPE gp_profile_page_views counter');
+  it('should return a error_page_views counter', () => {
+    expect(responseText).to.have.string('# HELP error_page_views The number of error page views\n# TYPE error_page_views counter');
   });
 
   it('should return an the default metrics', () => {
