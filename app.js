@@ -3,8 +3,16 @@ const express = require('express');
 const log = require('./lib/logger');
 const rewriteUrl = require('./lib/rewriteUrl');
 const constants = require('./config/constants');
+const promBundle = require('./lib/promBundle');
+const errorCounter = require('./lib/promCounters').errorPageViews;
 
 const app = express();
+
+// start collecting default metrics
+promBundle.promClient.collectDefaultMetrics();
+// metrics needs to be registered before routes wishing to have metrics generated
+// see https://github.com/jochen-schweizer/express-prom-bundle#sample-uusage
+app.use(promBundle.middleware);
 
 app.use((req, res, next) => {
   log.debug({ req });
@@ -31,6 +39,7 @@ app.get(constants.SITE_ROOT, (req, res) => {
     log.info({ referer, rewrittenUrl }, `Redirecting request from ${referer} to ${rewrittenUrl}`);
     return res.redirect(rewrittenUrl);
   }
+  errorCounter.inc(1);
   log.error({ req }, 'Unable to redirect');
   return res.sendFile(path.join(__dirname, '/views/options.html'));
 });
