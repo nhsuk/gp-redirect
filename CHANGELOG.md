@@ -1,4 +1,4 @@
-0.7.0 / 12-09-2017
+0.7.0 / 2017-09-12
 ==================
 - Update all npm dependencies
 - Misc back end improvements
@@ -7,41 +7,41 @@
 - Add CHANGELOG
 - Update Docker container to node `8.4.0-alpine`
 
-0.6.1 / 12-08-2017
+0.6.1 / 2017-08-12
 ==================
 - Add Splunk Docker log driver config
 - Remove git submodule for `ci-deployment`
 
-0.6.0 / 13-07-2017
+0.6.0 / 2017-08-13
 ==================
 - Update Docker container to use node `8.1.4`
 - Update all npm dependencies
 - Logging improvements
 
-0.5.0 / 06-07-2017
+0.5.0 / 2017-07-06
 ==================
 - Sending logs to Splunk via container configuration
 - Update all npm dependencies
 - Use of greenkeeper for dependency management
 
-0.4.0 / 25-05-2017
+0.4.0 / 2017-05-25
 ==================
 - Misc back end improvements
 
-0.3.1 / 27-03-2017
+0.3.1 / 2017-03-27
 ==================
 - Fix responding to client requests twice
 
-0.3.0 / 27-03-2017
+0.3.0 / 2017-03-27
 ==================
 - Improve query string handling
 - Fix errors with debug option
 
-0.2.0 / 24-03-2017
+0.2.0 / 2017-03-24
 ==================
 - Prevent web crawlers from indexing the page
 - Improvements to wording on the page that should never be seen
 
-0.1.0 / 23-03-2017
+0.1.0 / 2017-03-23
 ==================
 - The first release, including everything up to this point
