@@ -1,3 +1,7 @@
+0.8.0 / TBC
+===================
+- Update all npm dependencies
+
 0.7.1 / 2017-09-13
 ===================
 - Fix date format in CHANGELOG

@@ -4,19 +4,19 @@ version: v1.7.1
 ignore:
   'npm:ms:20170412':
     - node-pre-gyp > tar-pack > debug > ms:
-        reason: None given
+        reason: Module isn't user facing
         expires: '2017-07-15T10:24:43.987Z'
-      eslint-plugin-import > eslint-module-utils > debug > ms:
-        reason: None given
-        expires: '2017-07-16T11:37:09.938Z'
     - eslint-config-nhsuk > eslint-plugin-import > eslint-module-utils > debug > ms:
-        reason: None given
+        reason: Module isn't user facing
+        expires: '2017-07-16T11:37:09.938Z'
+    - eslint-plugin-import > eslint-module-utils > debug > ms:
+        reason: Module isn't user facing
         expires: '2017-07-16T11:37:09.938Z'
   'npm:shelljs:20140723':
     - eslint-config-nhsuk > eslint-plugin-json > jshint > shelljs:
-        reason: None given
+        reason: Module isn't user facing
         expires: '2017-07-16T11:37:09.938Z'
     - eslint-config-nhsuk > eslint > shelljs:
-        reason: None given
+        reason: Module isn't user facing
         expires: '2017-07-16T11:37:09.938Z'
 patch: {}
