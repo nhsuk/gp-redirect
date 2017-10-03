@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const helmet = require('helmet');
 const log = require('./lib/logger');
 const rewriteUrl = require('./lib/rewriteUrl');
 const constants = require('./config/constants');
@@ -13,6 +14,21 @@ promBundle.promClient.collectDefaultMetrics();
 // metrics needs to be registered before routes wishing to have metrics generated
 // see https://github.com/jochen-schweizer/express-prom-bundle#sample-uusage
 app.use(promBundle.middleware);
+
+app.use(helmet.noCache());
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ['\'self\''],
+    imgSrc: ['\'self\'', 'data:'],
+    styleSrc: ['\'unsafe-inline\''],
+  },
+}));
+app.use(helmet.frameguard({ action: 'deny' }));
+app.use(helmet.hidePoweredBy());
+app.use(helmet.ieNoOpen());
+app.use(helmet.noSniff());
+app.use(helmet.hsts({ includeSubDomains: false }));
+app.use(helmet.xssFilter());
 
 app.use((req, res, next) => {
   log.debug({ req });
