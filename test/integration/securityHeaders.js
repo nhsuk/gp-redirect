@@ -21,7 +21,7 @@ describe('app', () => {
           expect(res).to.not.have.header('X-Powered-By');
           expect(res).to.have.header('X-Download-Options', 'noopen');
           expect(res).to.have.header('X-Content-Type-Options', 'nosniff');
-          expect(res).to.have.header('Strict-Transport-Security', 'max-age=15552000; includeSubDomains');
+          expect(res).to.have.header('Strict-Transport-Security', 'max-age=15552000');
           expect(res).to.have.header('X-Xss-Protection', '1; mode=block');
           done();
         });

@@ -27,7 +27,7 @@ app.use(helmet.frameguard({ action: 'deny' }));
 app.use(helmet.hidePoweredBy());
 app.use(helmet.ieNoOpen());
 app.use(helmet.noSniff());
-app.use(helmet.hsts());
+app.use(helmet.hsts({ includeSubDomains: false }));
 app.use(helmet.xssFilter());
 
 app.use((req, res, next) => {
