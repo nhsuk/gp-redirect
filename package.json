@@ -5,7 +5,7 @@
   "main": "app-start.js",
   "scripts": {
     "coverage-check": "istanbul check-coverage --config .istanbul.yml",
-    "coverage-generate": "yarn istanbul -- cover _mocha -- --recursive",
+    "coverage-generate": "yarn istanbul -- cover _mocha -- --exit --recursive",
     "coverage-upload": "cat ./coverage/lcov.info | coveralls",
     "git-hook": "yarn lint && yarn coverage-generate && yarn coverage-check",
     "istanbul": "NODE_ENV=test istanbul",
@@ -15,7 +15,7 @@
     "prepush": "yarn git-hook && yarn snyk test",
     "start": "node app-start.js",
     "start-watch": "nodemon app-start.js | ./node_modules/bunyan/bin/bunyan",
-    "test": "NODE_ENV=test mocha --recursive test",
+    "test": "NODE_ENV=test mocha --exit --recursive test",
     "test-ci": "yarn git-hook && yarn coverage-upload",
     "test-watch": "yarn test -- --watch --reporter min"
   },
@@ -36,6 +36,7 @@
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
     "coveralls": "^3.0.0",
+    "destroy": "^1.0.4",
     "eslint": "^4.6.1",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-config-nhsuk": "^0.6.0",
