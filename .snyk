@@ -19,4 +19,11 @@ ignore:
     - eslint-config-nhsuk > eslint > shelljs:
         reason: Module isn't user facing
         expires: '2017-07-16T11:37:09.938Z'
+  'npm:mime:20170907':
+    - express > send > mime:
+        reason: Express 4.16.0 has dependencies that break this project
+        expires: '2017-11-08T14:10:42.847Z'
+    - express > serve-static > send > mime:
+        reason: Express 4.16.0 has dependencies that break this project
+        expires: '2017-11-08T14:10:42.847Z'
 patch: {}
