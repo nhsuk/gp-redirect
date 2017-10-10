@@ -1,7 +1,7 @@
-0.8.0 / TBC
+0.8.0 / 2017-10-10
 ===================
 - Add security headers
-- Update all npm dependencies
+- Update npm dependencies
 
 0.7.1 / 2017-09-13
 ===================
