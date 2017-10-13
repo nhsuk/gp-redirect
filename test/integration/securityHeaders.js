@@ -12,6 +12,7 @@ describe('app', () => {
       chai.request(app)
         .get('/')
         .end((err, res) => {
+          expect(res).to.have.header('Content-Security-Policy', 'default-src \'self\'; img-src \'self\' data:; style-src \'unsafe-inline\'');
           expect(res).to.have.header('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
           expect(res).to.have.header('Surrogate-Control', 'no-store');
           expect(res).to.have.header('Pragma', 'no-cache');
