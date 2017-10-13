@@ -1,3 +1,7 @@
+0.8.1 / TBD
+===================
+- Update styling of not found page
+
 0.8.0 / 2017-10-10
 ===================
 - Add security headers
