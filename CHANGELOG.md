@@ -1,4 +1,4 @@
-0.8.1 / TBD
+0.8.1 / 2017-10-17
 ===================
 - Update styling of not found page
 
