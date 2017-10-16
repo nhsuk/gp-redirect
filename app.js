@@ -15,20 +15,18 @@ promBundle.promClient.collectDefaultMetrics();
 // see https://github.com/jochen-schweizer/express-prom-bundle#sample-uusage
 app.use(promBundle.middleware);
 
-app.use(helmet.noCache());
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ['\'self\''],
-    imgSrc: ['\'self\'', 'data:'],
-    styleSrc: ['\'unsafe-inline\''],
+app.use(helmet({
+  noCache: true,
+  frameguard: { action: 'deny' },
+  hsts: { includeSubDomains: false },
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ['\'self\''],
+      imgSrc: ['\'self\'', 'data:'],
+      styleSrc: ['\'unsafe-inline\''],
+    }
   },
 }));
-app.use(helmet.frameguard({ action: 'deny' }));
-app.use(helmet.hidePoweredBy());
-app.use(helmet.ieNoOpen());
-app.use(helmet.noSniff());
-app.use(helmet.hsts({ includeSubDomains: false }));
-app.use(helmet.xssFilter());
 
 app.use((req, res, next) => {
   log.debug({ req });
