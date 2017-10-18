@@ -1,3 +1,7 @@
+0.8.2 / 2017-10-19
+===================
+- Log redirects at `debug` level to reduce log volume in production
+
 0.8.1 / 2017-10-17
 ===================
 - Update styling of not found page
