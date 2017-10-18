@@ -43,14 +43,14 @@ app.get(constants.SITE_ROOT, (req, res) => {
   const rewrittenUrl = rewriteUrl(referer);
 
   if (debug === '' || debug) {
-    log.info({ req, debug: true, rewrittenUrl }, `Not redirecting request from ${referer} to ${rewrittenUrl} due to debug flag`);
+    log.debug({ req, debug: true, rewrittenUrl }, `Not redirecting request from ${referer} to ${rewrittenUrl} due to debug flag`);
     return res.json({
       headers: req.headers,
       redirectTo: rewrittenUrl,
     });
   }
   if (rewrittenUrl) {
-    log.info({ referer, rewrittenUrl }, `Redirecting request from ${referer} to ${rewrittenUrl}`);
+    log.debug({ referer, rewrittenUrl }, `Redirecting request from ${referer} to ${rewrittenUrl}`);
     return res.redirect(rewrittenUrl);
   }
   errorCounter.inc(1);
