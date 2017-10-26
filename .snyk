@@ -2,28 +2,11 @@
 version: v1.7.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
-  'npm:ms:20170412':
-    - node-pre-gyp > tar-pack > debug > ms:
-        reason: Module isn't user facing
-        expires: '2017-07-15T10:24:43.987Z'
-    - eslint-config-nhsuk > eslint-plugin-import > eslint-module-utils > debug > ms:
-        reason: Module isn't user facing
-        expires: '2017-07-16T11:37:09.938Z'
-    - eslint-plugin-import > eslint-module-utils > debug > ms:
-        reason: Module isn't user facing
-        expires: '2017-07-16T11:37:09.938Z'
-  'npm:shelljs:20140723':
-    - eslint-config-nhsuk > eslint-plugin-json > jshint > shelljs:
-        reason: Module isn't user facing
-        expires: '2017-07-16T11:37:09.938Z'
-    - eslint-config-nhsuk > eslint > shelljs:
-        reason: Module isn't user facing
-        expires: '2017-07-16T11:37:09.938Z'
   'npm:mime:20170907':
     - express > send > mime:
-        reason: Express 4.16.0 has dependencies that break this project
-        expires: '2017-11-08T14:10:42.847Z'
+        reason: Express 4.16 has problems
+        expires: '2017-11-24T08:36:14.906Z'
     - express > serve-static > send > mime:
-        reason: Express 4.16.0 has dependencies that break this project
-        expires: '2017-11-08T14:10:42.847Z'
+        reason: Express 4.16 has problems
+        expires: '2017-11-24T08:36:14.906Z'
 patch: {}

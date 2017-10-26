@@ -1,3 +1,8 @@
+0.9.0 / 2017-10-26
+===================
+- Upgrade Docker container to `node:8.8.0-alpine`
+- Update npm dependencies
+
 0.8.2 / 2017-10-19
 ===================
 - Log redirects at `debug` level to reduce log volume in production
