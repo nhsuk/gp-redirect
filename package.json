@@ -1,6 +1,6 @@
 {
   "name": "gp-redirect",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Redirects requests for GP surgeries based on the referring page",
   "main": "app-start.js",
   "scripts": {
