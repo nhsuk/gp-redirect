@@ -1,12 +1,4 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.1
-# ignores vulnerabilities until expiry date; change duration by modifying expiry date
-ignore:
-  'npm:mime:20170907':
-    - express > send > mime:
-        reason: Express 4.16 has problems
-        expires: '2017-11-24T08:36:14.906Z'
-    - express > serve-static > send > mime:
-        reason: Express 4.16 has problems
-        expires: '2017-11-24T08:36:14.906Z'
+version: v1.10.1
+ignore: {}
 patch: {}
