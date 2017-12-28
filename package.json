@@ -1,6 +1,6 @@
 {
   "name": "gp-redirect",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Redirects requests for GP surgeries based on the referring page",
   "main": "app-start.js",
   "scripts": {
@@ -26,9 +26,10 @@
     "url": "git+https://github.com/nhsuk/gp-redirect.git"
   },
   "dependencies": {
-    "express": "4.15.5",
+    "express": "4.16.2",
     "express-prom-bundle": "^3.1.0",
     "helmet": "^3.8.2",
+    "mime-db": "^1.32.0",
     "nhsuk-bunyan-logger": "^1.4.1",
     "tdigest": "^0.1.1"
   },
@@ -36,7 +37,6 @@
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
     "coveralls": "^3.0.0",
-    "destroy": "^1.0.4",
     "eslint": "^4.6.1",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-config-nhsuk": "^0.7.0",
