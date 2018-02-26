@@ -1,3 +1,7 @@
+0.12.0 / TBD
+===================
+- Update npm dependencies
+
 0.11.0 / 2018-01-02
 ===================
 - Update npm dependencies

@@ -1,3 +1,7 @@
+# **DEPRECATED** - no longer actively maintained
+
+---
+
 # GP redirect
 
 [![GitHub Release](https://img.shields.io/github/release/nhsuk/gp-redirect.svg)](https://github.com/nhsuk/gp-redirect/releases/latest/)
